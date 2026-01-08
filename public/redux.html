@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redux Core</title>
+  </head>
+  <body>
+    <h2 id="value">0</h2>
+    <button id="increase">Increase</button>
+    <button id="decrease">Decrease</button>
+    <button id="reset">Reset</button>
+    <button id="removeListener">Remove Listener</button>
+
+    <script src="./redux.js"></script>
+
+    <!-- <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.1/redux.js"
+      integrity="sha512-Olr8rkMYuxq3KpAPjYA/mAVYe7EIEP4RkhoAvD/qOrlauzE4CTvpQSg/cRX0/5Qreret4aobD0vg1xtjBqR7VA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script> -->
+
+    <script>
+      const initValue = 0
+      function reducer(state, action) {
+        switch (action.type) {
+          case 'increase':
+            return state + 1
+          case 'decrease':
+            return state - 1
+          case 'reset':
+            return 0
+          default:
+            return state
+        }
+      }
+
+      const store = Redux.createStore(reducer, initValue)
+
+      const value = document.getElementById('value')
+      const increaseBtn = document.getElementById('increase')
+      const decreaseBtn = document.getElementById('decrease')
+      const resetBtn = document.getElementById('reset')
+      const removeListenerBtn = document.getElementById('removeListener')
+
+      increaseBtn.onclick = () => store.dispatch({ type: 'increase' })
+      decreaseBtn.onclick = () => store.dispatch({ type: 'decrease' })
+      resetBtn.onclick = () => store.dispatch({ type: 'reset' })
+
+      function updateValue() {
+        value.textContent = store.getState()
+      }
+
+      const unsubscribe = store.subscribe(updateValue)
+      removeListenerBtn.onclick = unsubscribe
+    </script>
+  </body>
+</html>
