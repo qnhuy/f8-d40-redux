@@ -4,15 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Redux Core</title>
+    <link rel="stylesheet" href="./redux.css">
   </head>
   <body>
-    <h2 id="value">0</h2>
-    <button id="increase">Increase</button>
-    <button id="decrease">Decrease</button>
-    <button id="reset">Reset</button>
-    <button id="removeListener">Remove Listener</button>
+    <div class="layout-container">
+      <div class="navigate">
+        <ul class="navigate-container">
+          <li class="navigate-item">
+            <a href="./redux.html" class="navigate-link">Redux Core: Counter</a>
+          </li>
+          <li class="navigate-item">
+            <a href="/" class="navigate-link">Task Management</a>
+          </li>
+        </ul>
+      </div>
+      <div class="main-content">
+        <h1 id="value">0</h1>
 
-    <script src="./redux.js"></script>
+        <div class="actions">
+
+          <button id="increase">Increase</button>
+          <button id="decrease">Decrease</button>
+          <button id="reset">Reset</button>
+          <button id="removeListener">Remove Listener</button>
+        </div>
+      </div>
+    </div>
 
     <!-- <script
       src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.1/redux.js"
@@ -21,7 +38,9 @@
       referrerpolicy="no-referrer"
     ></script> -->
 
-    <script>
+    <script type="module">
+      import Redux from '../src/libs/redux/index.js'
+
       const initValue = 0
       function reducer(state, action) {
         switch (action.type) {

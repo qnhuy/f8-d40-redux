@@ -1,0 +1,13 @@
+.newTaskContainer {
+    text-align: center;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.title {
+  font-size: 1.6rem;
+}

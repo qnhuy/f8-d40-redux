@@ -1,0 +1,15 @@
+.layoutContainer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navigate {
+  height: 50px;
+  width: 100%;
+}
+
+.mainContent {
+  width: 100%;
+  flex: 1;
+}

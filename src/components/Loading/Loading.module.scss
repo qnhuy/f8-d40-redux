@@ -1,0 +1,25 @@
+.loadingWrapper {
+  position: fixed;
+  inset: 0;
+  background-color: #00000094;
+  display: grid;
+  place-items: center;
+  z-index: 999;
+}
+
+.loadingWrapper::before {
+  content: '';
+  display: block;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.25);
+  border-top-color: #fff;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+.btn {
+  max-width: 200px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  outline: none;
+  border: 1px solid #ccc;
+  background-color: rgb(255, 255, 255);
+  transition: all 0.1s linear;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #e2e2e2;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loadingBtn {
+  position: relative;
+  color: transparent;
+  pointer-events: none;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    top: 50%;
+    left: 50%;
+    margin-left: -7px;
+    margin-top: -7px;
+    border: 2px solid #ccc;
+    border-top-color: #333;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+}

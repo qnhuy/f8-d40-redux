@@ -1,0 +1,15 @@
+.taskItemWrapper {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #ebebeb;
+  }
+}
+
+.actions {
+    display: flex;
+    gap: 6px;
+}
