@@ -64,7 +64,7 @@ export default function TaskList() {
           </button>
         </div>
         <ul className={styles.taskList}>
-          {taskList ? (
+          {taskList.length > 0 ? (
             taskList.map((task) => (
               <TaskItem
                 key={task.id}
@@ -75,7 +75,7 @@ export default function TaskList() {
               />
             ))
           ) : (
-            <span>There are no tasks yet</span>
+            <span className={styles.noTask}>There are no tasks yet</span>
           )}
         </ul>
       </div>

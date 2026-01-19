@@ -4,6 +4,7 @@ import { createTask } from '../../services'
 import { useDispatch } from '../../libs/react-redux/hooks'
 import { useNavigate } from 'react-router-dom'
 import TaskForm from '../../components/TaskForm'
+import BackToTaskList from '../../components/BackToTaskList'
 
 export default function NewTask() {
   const [isLoading, setIsLoading] = useState(false)
@@ -23,6 +24,7 @@ export default function NewTask() {
 
   return (
     <div className={styles.newTaskContainer}>
+      <BackToTaskList />
       <h1 className={styles.title}>Add New Task</h1>
       <TaskForm
         onSubmit={handleCreateTask}

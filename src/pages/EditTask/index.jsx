@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from 'react'
 import TaskForm from '../../components/TaskForm'
 import { getTaskById, updateTask } from '../../services'
 import { useDispatch } from '../../libs/react-redux/hooks'
+import BackToTaskList from '../../components/BackToTaskList'
 
 export default function EditTask() {
   const { id } = useParams()
@@ -39,6 +40,7 @@ export default function EditTask() {
 
   return (
     <div className={styles.editTaskContainer}>
+      <BackToTaskList />
       <h1 className={styles.title}>Edit Task</h1>
       <TaskForm
         onSubmit={handleSaveTask}
