@@ -5,7 +5,10 @@ export default function Navigate() {
   return (
     <ul className={styles.navigateContainer}>
       <li className={styles.navigateItem}>
-        <a href='./public/redux.html' className={styles.navigateLink}>
+        <a
+          href='/f8-d40-redux/public/redux.html'
+          className={styles.navigateLink}
+        >
           Redux Core: Counter
         </a>
       </li>
