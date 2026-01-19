@@ -64,7 +64,7 @@ export default function TaskList() {
           </button>
         </div>
         <ul className={styles.taskList}>
-          {taskList.length > 0 ? (
+          {taskList?.length > 0 ? (
             taskList.map((task) => (
               <TaskItem
                 key={task.id}

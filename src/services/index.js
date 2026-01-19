@@ -16,26 +16,26 @@ export async function handleFetch(fetchFuntion) {
 }
 
 export async function getTasks() {
-  const tasks = handleFetch(() => http.get('/'))
+  const tasks = await handleFetch(() => http.get('/'))
   return tasks
 }
 
 export async function getTaskById(taskId) {
-  const task = handleFetch(() => http.get('/' + taskId))
+  const task = await handleFetch(() => http.get('/' + taskId))
   return task
 }
 
 export async function deleteTask(taskId) {
-  const response = handleFetch(() => http.delete('/' + taskId))
+  const response = await handleFetch(() => http.delete('/' + taskId))
   return response
 }
 
 export async function createTask(newTask) {
-  const task = handleFetch(() => http.post('/', newTask))
+  const task = await handleFetch(() => http.post('/', newTask))
   return task
 }
 
 export async function updateTask(taskId, data) {
-  const task = handleFetch(() => http.patch('/' + taskId, data))
+  const task = await handleFetch(() => http.patch('/' + taskId, data))
   return task
 }
